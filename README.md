@@ -45,7 +45,7 @@ The project communicates with the OpenRouter API to retrieve AI responses. Make 
 
 ## 🖼️ Demo
 
-![Chatbot Screenshot](./images/bot.jpg)
+![Chatbot Screenshot](https://raw.githubusercontent.com/csantos31/talktoai/refs/heads/main/public/screenshot.png)
 
 ## 📝 Future Improvements
 
