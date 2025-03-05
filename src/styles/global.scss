@@ -1,0 +1,56 @@
+
+:root{
+    --primary: #131515;
+    --secondary: #30312B;
+    --primary-light: #FFFFD3;
+    --primary-light-transparent: #FFFFD388;
+    --gray: #424242;
+    --white: #FFF;
+}
+
+*{
+    padding: 0;
+    margin: 0;
+}
+
+body{
+    background-color: var(--primary);
+    overflow-x: hidden;
+}
+
+h1, h2, h3, h4, h5, h6, span, p, button, input{
+    font-family: 'roboto', sans-serif;
+    color: var(--primary-light);
+    margin: 0;
+}
+
+a{
+    text-decoration: none;
+}
+
+.App{
+    padding: 1.5rem;
+    padding-top: 0;
+}
+
+
+button {
+    background-color: var(--primary-light);
+    color: var(--primary);
+    font-size: 1em;
+    font-weight: bold;
+    padding: 0.5rem;
+    border-radius: 0.5em;
+    cursor: pointer;
+}
+
+input {
+    background-color: var(--white);
+    color: var(--primary);
+    font-size: 1em;
+    font-weight: bold;
+    padding: 0.5rem;
+    border-radius: 0.5em;
+    width: 60%;
+    height: 2rem;
+}
