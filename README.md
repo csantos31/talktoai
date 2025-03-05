@@ -44,6 +44,7 @@ The project communicates with the OpenRouter API to retrieve AI responses. Make 
 - Properly configure the `REACT_APP_IA_API_KEY` variable.
 
 ## 🖼️ Demo
+### [🚀Visit the demo APP to check it🚀](https://talktoai-xi.vercel.app/)
 
 ![Chatbot Screenshot](https://raw.githubusercontent.com/csantos31/talktoai/refs/heads/main/public/screenshot.png)
 
