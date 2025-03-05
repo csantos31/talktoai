@@ -18,7 +18,6 @@
     }
   }
 
-  //depois daqui
   .chat-container {
     display: flex;
     flex-direction: column;
@@ -69,12 +68,31 @@
       opacity: 100;
     }
   }
-  
+
   @keyframes l {
     to {
-      clip-path: inset(0)
+      clip-path: inset(0);
     }
   }
 
-  //até aqui
+  @media (max-width: 769px) {
+    padding-left: 0;
+    padding-right: 0;
+    .chat-container {
+      gap: 2rem;
+      width: 100%;
+    }
+
+    .message {
+      padding: 1rem;
+    }
+    input {
+      border-radius: 0.5em;
+      width: 96%;
+      height: 3rem;
+    }
+    button {
+      width: 40%;
+    }
+  }
 }

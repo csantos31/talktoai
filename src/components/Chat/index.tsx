@@ -2,38 +2,25 @@ import React, { useState } from "react";
 import "./styles.scss";
 import bot from "../../images/bot.jpg";
 
-export function ChatComponent() {
+import { IApiService } from "../../interfaces/IApiService";
+
+interface ChatComponentProps {
+  apiService: IApiService;
+  selectedApi: any;
+}
+
+export function ChatComponent({ apiService, selectedApi }: ChatComponentProps) {
   const [inputMessage, setInputMessage] = useState("");
   const [response, setResponse] = useState("");
-
   const [userQuestion, setUserQuestion] = useState("");
   const [hideChat, setHideChat] = useState(true);
   const [isLoading, setIsLoading] = useState(false);
   const [showTitle, setShowTitle] = useState(true);
 
   const fetchIaData = async (message: string) => {
-    const apiResponse = await fetch(
-      "https://openrouter.ai/api/v1/chat/completions",
-      {
-        method: "POST",
-        headers: {
-          Authorization:
-            `Bearer ${process.env.REACT_APP_IA_API_KEY}`,
-            "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          model: "deepseek/deepseek-r1-distill-llama-70b:free",
-          messages: [
-            {
-              role: "user",
-              content: message,
-            },
-          ],
-        }),
-      }
-    )
-      .then((res) => res.json())
-      .then((data) => data.choices[0].message.content)
+    const apiResponse = await apiService
+      .fetchResponse(message)
+      .then((res) => res)
       .catch((err) => {
         console.log("UNEXPECTED ERROR", err);
       });
@@ -47,10 +34,10 @@ export function ChatComponent() {
     setIsLoading(true);
     setShowTitle(false);
     setResponse("");
+    setInputMessage("");
 
     fetchIaData(inputMessage).then((result) => {
-      setResponse(result);
-      setInputMessage("");
+      setResponse(result || "Erro processando os dados");
       setHideChat(false);
       setIsLoading(false);
     });
@@ -62,7 +49,7 @@ export function ChatComponent() {
         <div className="image">
           <img src={bot} alt="Bot" />
         </div>
-        {showTitle === true && <h1> Inicie a conversa </h1>};
+        {showTitle === true && <h1> Inicie a conversa com {selectedApi} </h1>};
         {isLoading === true && <div className="loading">...</div>}
         {!hideChat && (
           <div className="chat-container">

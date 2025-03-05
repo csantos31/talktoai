@@ -1,6 +1,6 @@
-# Chat with DeepSeek via OpenRouter
+# Chat with DeepSeek or ChatGPT via OpenRouter
 
-This project implements a chatbot in React that communicates with the **DeepSeek** AI model using the **OpenRouter** API.
+This project implements a chatbot in React that communicates with the **DeepSeek**  and **ChatGPT** AI model using the **OpenRouter** API.
 
 ## 🛠 Technologies Used
 
@@ -12,9 +12,38 @@ This project implements a chatbot in React that communicates with the **DeepSeek
 ## 🚀 Features
 
 - Send messages to AI via OpenRouter.
-- Display responses from the DeepSeek model.
+- The user can choose AI ENGINE he chats with based on a toggle on the top of the screen
+- Display responses from the model depending on selected service. 
+  > At this point, it's cool that I applied the Dependency Inversion concept, so it's easy to add new IA services in the future
+
 - Loading indicator while processing the response.
 - Simple and intuitive interface.
+
+## 📂 Project Structure
+
+```
+├── src/
+│ ├── components/
+│ │ ├── Chat/
+│ │ │ ├── index.tsx
+│ │ │ └── styles.scss
+│ │ └── Menu/
+│ │ ├── index.tsx
+│ │ └── styles.scss
+│ ├── data/
+│ │ └── external-apis.json
+│ ├── images/...
+│ ├── interfaces/
+│ │ ├── IApiServices.ts
+│ │ └── IExternalApi.ts
+│ ├── services/
+│ │ ├── ChatGptServices/
+│ │ └── DeepSeekServices/
+│ ├── styles/global.scss
+│ ├── App.tsx
+│ ├── index.tsx
+│ 
+```
 
 ## 📦 Installation and Execution
 
@@ -50,7 +79,6 @@ The project communicates with the OpenRouter API to retrieve AI responses. Make 
 
 ## 📝 Future Improvements
 
-- Add support for multiple AI models.
 - Enhance the interface with animations and visual feedback.
 - Implement conversation history.
 

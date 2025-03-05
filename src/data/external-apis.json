@@ -1,0 +1,14 @@
+{
+    "data": [
+        {
+            "name": "DeepSeek",
+            "identifier":"deepseek",
+            "description": "deepseek/deepseek-r1-distill-llama-70b:free engine"
+        },
+        {
+            "name": "ChatGPT",
+            "identifier":"chatgpt",
+            "description": "gpt-3.5-turbo engine"
+        }
+    ]
+}

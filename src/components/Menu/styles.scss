@@ -1,0 +1,32 @@
+.menu {
+  width: 100%;
+  display: flex;
+  justify-content: end;
+  gap: 1rem;
+  padding-bottom: 0.8rem;
+  padding-top: 0.8rem;
+  margin-bottom: 1rem;
+  text-align: end;
+  position: sticky;
+  top: 0;
+  background-color: var(--primary);
+  z-index: 999;
+
+  span {
+    color: var(--gray);
+  }
+
+  .menu-item {
+    cursor: pointer;
+    background-color: var(--primary);
+    color: var(--primary-light);
+    padding: 0.4rem;
+    border: none;
+  }
+
+  .selected {
+    border-radius: 0.8em;
+    background-color: var(--primary-light-transparent);
+    color: var(--primary-light);
+  }
+}
