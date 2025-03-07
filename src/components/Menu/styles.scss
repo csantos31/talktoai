@@ -12,8 +12,9 @@
   background-color: var(--primary);
   z-index: 999;
 
-  span {
-    color: var(--gray);
+  .about-me {
+    color: var(--gold);
+    padding: 0.4rem;
   }
 
   .menu-item {

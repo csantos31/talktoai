@@ -24,9 +24,12 @@ export function MenuComponent({
   return (
     <>
       <div className="menu">
+        <a className="about-me" href="https://cyntia-santos.vercel.app/">
+          <span>See my portfolio 👋</span>
+        </a>
         {availableApis.map((apiItem) => (
           <button
-            onClick={(e) => handleButtonClick(apiItem.identifier)}
+            onClick={() => handleButtonClick(apiItem.identifier)}
             className={getClassNames(apiItem.identifier)}
             key={apiItem.identifier}
           >
