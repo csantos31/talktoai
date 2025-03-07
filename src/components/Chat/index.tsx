@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./styles.scss";
 import bot from "../../images/bot.jpg";
 
@@ -28,20 +28,33 @@ export function ChatComponent({ apiService, selectedApi }: ChatComponentProps) {
     return apiResponse;
   };
 
-  const handleSendButtonClick = () => {
-    setUserQuestion(inputMessage);
+  const processMessage = () => {
+    const message = inputMessage || userQuestion;
+
+    setUserQuestion(message);
     setHideChat(false);
     setIsLoading(true);
     setShowTitle(false);
     setResponse("");
     setInputMessage("");
 
-    fetchIaData(inputMessage).then((result) => {
+    fetchIaData(message).then((result) => {
       setResponse(result || "Erro processando os dados");
       setHideChat(false);
       setIsLoading(false);
     });
   };
+
+  const handleSendButtonClick = () => {
+    console.log("clicking");
+    if (inputMessage !== "") processMessage();
+  };
+
+  useEffect(() => {
+    if (userQuestion !== "") {
+      processMessage();
+    }
+  }, [selectedApi]);
 
   return (
     <>
